@@ -3,59 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benim Web Sitem</title>
+    <title>Okul Haber Portalı</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e1e2f, #2d2b42);
-            color: #ffffff;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background-color: #1a252f;
+            color: #ffffff;
+            padding: 15px 20px;
             text-align: center;
         }
-        .container {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            max-width: 500px;
-            width: 90%;
+        header h1 {
+            font-size: 28px;
+            letter-spacing: 1px;
         }
-        h1 {
-            color: #4ecca3;
-            margin-bottom: 10px;
+        nav {
+            background-color: #e74c3c;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            gap: 20px;
         }
-        p {
-            color: #b2b2b2;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .btn {
-            display: inline-block;
-            background: #4ecca3;
-            color: #1e1e2f;
-            padding: 10px 20px;
-            border-radius: 5px;
+        nav a {
+            color: white;
             text-decoration: none;
             font-weight: bold;
-            transition: 0.3s;
+            font-size: 15px;
         }
-        .btn:hover {
-            background: #45b393;
-            transform: translateY(-2px);
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .ticker {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 8px 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        .ticker-badge {
+            background-color: #e74c3c;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 15px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+        .main-news {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .main-news img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+        .main-news-content {
+            padding: 20px;
+        }
+        .main-news-content h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .main-news-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .side-news {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            font-size: 16px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        .card p {
+            font-size: 13px;
+            color: #777;
+            line-height: 1.4;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a252f;
+            color: white;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hoş Geldiniz! 🚀</h1>
-        <p>Bu web sitesi tamamen ücretsiz bir şekilde GitHub Pages üzerinden yayına alınmıştır.</p>
-        <a href="#" class="btn" onclick="alert('Siteye hoş geldin!')">Tıkla</a>
+
+    <header>
+        <h1>OKUL HABER PORTALI</h1>
+    </header>
+
+    <nav>
+        <a href="#">Ana Sayfa</a>
+        <a href="#">Gündem</a>
+        <a href="#">Teknoloji</a>
+        <a href="#">Spor</a>
+        <a href="#">Duyurular</a>
+    </nav>
+
+    <div class="ticker">
+        <span class="ticker-badge">SON DAKİKA</span>
+        <span>Okul haber sitemiz resmen yayın hayatına başladı!</span>
     </div>
+
+    <div class="container">
+        <!-- Ana Haber -->
+        <div class="main-news">
+            <img src="https://picsum.photos/800/400" alt="Ana Haber Visual">
+            <div class="main-news-content">
+                <h2>Büyük Gelişme: Sitemiz Yayında!</h2>
+                <p>Bugün atılan adımlarla birlikte okul erişim engeline takılmayan yeni haber portalımız yayına girdi. Artık güncel gelişmeleri buradan anlık olarak takip edebilirsiniz.</p>
+            </div>
+        </div>
+
+        <!-- Yan Haberler -->
+        <div class="side-news">
+            <div class="card">
+                <h3>🎮 Teknoloji & Oyun</h3>
+                <p>En son oyun güncellemeleri ve teknoloji dünyasından öne çıkanlar yakında burada.</p>
+            </div>
+            <div class="card">
+                <h3>⚽ Spor Haberleri</h3>
+                <p>Haftanın maç özetleri ve spor etkinlikleri haberi çok yakında.</p>
+            </div>
+            <div class="card">
+                <h3>📢 Duyuru</h3>
+                <p>Sitemize eklenmesini istediğiniz haber veya içerikleri bize iletebilirsiniz.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Okul Haber Portalı - Tüm Hakları Saklıdır.</p>
+    </footer>
+
 </body>
 </html>
